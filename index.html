@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorytm Genetyczny</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="algorithm-container">
+      <div class="algorithm-container__info">
+        <h1 class="page-h1">Algorytm Genetyczny – wyszukiwanie maksimum funkcji</h1>
+        <p class="algorithm-container__info-text">
+          Użyta funkcja: <span>f(x) = a·x³ + b·x² + c·x + d</span>
+        </p>
+      </div>
+
+      <div class="algorithm-container__data">
+        <div class="algorithm-container__inputs">
+
+
+          <div class="algorithm-container__inputs-variable">
+            <div class="algorithm-input-wrapper" data-tooltip="Współczynnik a – wpływa na kształt (część x³)">
+              <label class="algorithm-label">a:</label>
+              <input class="algorithm-input" title="Współczynnik a – wpływa na kształt (część x³)" type="number" id="a" step="any" value="1">
+            </div>
+
+            <div class="algorithm-input-wrapper" data-tooltip="Współczynnik b – wpływa na krzywiznę funkcji (część x²)" >
+              <label class="algorithm-label">b:</label>
+              <input class="algorithm-input" type="number" id="b" step="any" value="2">
+            </div>
+
+            <div class="algorithm-input-wrapper" data-tooltip="Współczynnik c – wpływa na nachylenie funkcji (część x)" >
+              <label class="algorithm-label">c:</label>
+              <input class="algorithm-input" type="number" id="c" step="any" value="3">
+            </div>
+
+            <div class="algorithm-input-wrapper" data-tooltip="Współczynnik d – przesunięcie funkcji w górę lub w dół (stała)" >
+              <label class="algorithm-label">d:</label>
+              <input class="algorithm-input" type="number" id="d" step="any" value="4">
+            </div>
+          </div>
+
+          
+          <div class="algorithm-container__inputs-range">
+            <label class="algorithm-label">Zakres X:</label>
+            <div class="algorithm-input-wrapper"data-tooltip="Dolna granica przedziału poszukiwań (min x)" ><input class="algorithm-input" id="xMin" type="number" value="0"></div>
+            <div class="algorithm-input-wrapper" data-tooltip="Górna granica przedziału poszukiwań (max x)"><input class="algorithm-input" id="xMax" type="number" value="31"></div>
+          </div>
+
+          
+          <div class="algorithm-container__inputs-others">
+            <div class="algorithm-input-wrapper" data-tooltip="Prawdopodobieństwo krzyżowania (np. 0.6–0.9)">
+              <label class="algorithm-label">Pk (krzyżowanie):</label>
+              <input class="algorithm-input" type="number" id="Pk" step="0.01" value="0.8">
+            </div>
+
+            <div class="algorithm-input-wrapper" data-tooltip="Prawdopodobieństwo mutacji (np. 0.01–0.3)">
+              <label class="algorithm-label">Pm (mutacja):</label>
+              <input class="algorithm-input" type="number" id="Pm" step="0.01" value="0.2">
+            </div>
+
+            <div class="algorithm-input-wrapper" data-tooltip="Wielkość populacji (liczba osobników)">
+              <label class="algorithm-label">Liczba chromosomów:</label>
+              <input class="algorithm-input" type="number" id="popSize" value="6">
+            </div>
+
+            <div class="algorithm-input-wrapper" data-tooltip="Zatrzymanie algorytmu po tylu epokach bez poprawy wyniku" >
+              <label class="algorithm-label">Brak poprawy przez X epok:</label>
+              <input class="algorithm-input" type="number" id="maxNoChange" value="10">
+            </div>
+          </div>
+
+          <button class="action-btn" id="startBtn">Uruchom algorytm</button>
+        </div>
+
+        
+        <div class="algorithm-container__results">
+          <h2 class="page-h2">Wyniki:</h2>
+          <div class="algorithm-container__results__box">
+            <pre id="output"></pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
